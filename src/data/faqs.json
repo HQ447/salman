@@ -1,0 +1,27 @@
+[
+  {
+    "id": "q1",
+    "question": "What is Fiqh al-Muamalat, and how does Souq Diyanat implement it?",
+    "answer": "Fiqh al-Muamalat refers to Islamic jurisprudence governing commercial transactions. Souq Diyanat integrates these values by removing interest (Riba), extreme uncertainty (Gharar), and gambling or deceptive elements (Maysir). We enforce clear, descriptive listing details to prevent ignorance of product specifications (Jahalah), require vendors to own stock prior to final sale, and guarantee option options (Khayar al-Ayb) for defective goods."
+  },
+  {
+    "id": "q2",
+    "question": "Are the vendors on this platform verified?",
+    "answer": "Yes. Every vendor on Souq Diyanat must submit clear proof of business licensing, identify physical stock ownership, and sign a binding ethics pledge representing their alignment with shariah-compliant trade practices. Only after manual review by our administration are they approved to publish products."
+  },
+  {
+    "id": "q3",
+    "question": "What is your refund policy regarding Islamic principles?",
+    "answer": "Corresponding to the Fiqh concept of 'Khayar al-Ayb' (Option of Defect), if a product arrives damaged, defective, or not matching the specifications listed, the buyer has the absolute right to return the product and receive a complete refund. Vendors must also provide a transparent, reasonable window for returns (Bay' al-Khayar)."
+  },
+  {
+    "id": "q4",
+    "question": "Can I cancel my order after placing it?",
+    "answer": "Yes. Before a product is packed or shipped, you can cancel your order instantly from your orders page. This matches the Islamic principle of mutual agreement and option options when a sale is initiated."
+  },
+  {
+    "id": "q5",
+    "question": "How are shipping fees calculated?",
+    "answer": "To prevent Gharar (extreme uncertainty) in prices, all shipping fees are calculated precisely at checkout based on packaging weight and location. There are no hidden charges or unexpected rates added post-transaction."
+  }
+]

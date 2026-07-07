@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "JameelNoori";
+  src: url("./assets/fonts/Jameel\ Noori\ Nastaleeq\ Regular.ttf")
+    format("truetype");
+}
+
+@font-face {
+  font-family: "JameelNooriKasheeda";
+  src: url("./assets/fonts/Jameel\ Noori\ Nastaleeq\ Kasheeda.ttf")
+    format("truetype");
+}
+
+@theme {
+  --color-primary: #0b6e4f;
+  --color-primary-dark: #084c3a;
+  --color-primary-light: #e8f5ee;
+  --color-gold: #d4af37;
+  --color-gold-light: #fef9e7;
+  --color-bg-custom: #fafaf5;
+  --color-bg-surface: #ffffff;
+  --color-text-dark: #1a2332;
+  --color-text-body: #374151;
+  --color-muted-gray: #6b7280;
+  --color-muted-light: #9ca3af;
+  --color-border-custom: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-success-custom: #16a34a;
+  --color-danger-custom: #dc2626;
+  --color-warning-custom: #d97706;
+
+  --font-inter: "Inter", "Poppins", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-urdu: "JameelNoori", "JameelNooriKasheeda", serif;
+
+  --font-regular: "JameelNoori", serif;
+  --font-kasheeda: "JameelNooriKasheeda", serif;
+}
+
+/* Global Reset & Base Styles */
+@layer base {
+  body {
+    background-color: var(--color-bg-custom);
+    color: var(--color-text-dark);
+    font-family: "Inter", var(--font-inter);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Utilities */
+.islamic-pattern {
+  background-image:
+    radial-gradient(var(--color-primary-dark) 0.5px, transparent 0.5px),
+    radial-gradient(
+      var(--color-primary-dark) 0.5px,
+      var(--color-bg-custom) 0.5px
+    );
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    10px 10px;
+  opacity: 0.05;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-custom);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-dark);
+}

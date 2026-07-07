@@ -1,0 +1,50 @@
+[
+  {
+    "id": "books-literature",
+    "name": "Islamic Books & Literature",
+    "slug": "books-literature",
+    "icon": "BookOpen",
+    "count": 142,
+    "description": "Authentic Qurans, Hadith collections, Islamic history, and children's educational books."
+  },
+  {
+    "id": "modest-fashion",
+    "name": "Modest Fashion & Apparel",
+    "slug": "modest-fashion",
+    "icon": "Shirt",
+    "count": 285,
+    "description": "Abayas, Thobes, Hijabs, prayer dresses, and modest clothing for men, women, and children."
+  },
+  {
+    "id": "halal-cosmetics",
+    "name": "Halal Cosmetics & Perfumes",
+    "slug": "halal-cosmetics",
+    "icon": "Sparkles",
+    "count": 94,
+    "description": "100% alcohol-free perfumes, halal certified makeup, and organic personal care products."
+  },
+  {
+    "id": "organic-foods",
+    "name": "Dates & Organic Foods",
+    "slug": "organic-foods",
+    "icon": "Apple",
+    "count": 120,
+    "description": "Ajwa dates, Yemen Sidr honey, black seed oils, and premium organic certified halal foods."
+  },
+  {
+    "id": "home-decor",
+    "name": "Islamic Art & Home Decor",
+    "slug": "home-decor",
+    "icon": "Home",
+    "count": 78,
+    "description": "Beautiful calligraphy canvases, premium prayer rugs, tasbihs, and traditional home fragrance."
+  },
+  {
+    "id": "educational-toys",
+    "name": "Educational & Toys",
+    "slug": "educational-toys",
+    "icon": "Gamepad2",
+    "count": 55,
+    "description": "Interactive prayer mats, Islamic quiz games, Arabic word puzzles, and educational toys."
+  }
+]
