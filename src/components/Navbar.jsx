@@ -277,14 +277,14 @@ function Navbar() {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setIsOpen(false)}
-                            className="fixed inset-0 bg-black/30 backdrop-blur-xs lg:hidden z-30"
+                            className="fixed inset-0 bg-black/30  lg:hidden z-30"
                         />
                         <motion.div
                             initial={{ x: '100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '100%' }}
                             transition={{ type: 'tween', duration: 0.25 }}
-                            className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-white shadow-2xl border-l border-border-custom z-40 p-6 flex flex-col justify-between lg:hidden"
+                            className="fixed top-0 right-0 h-screen w-4/5 max-w-sm p-8 bg-white shadow-2xl border-l border-border-custom z-40 flex flex-col lg:hidden"
                         >
                             <div className="space-y-6">
                                 {/* Header inside drawer */}
@@ -362,7 +362,7 @@ function Navbar() {
                                             />
                                             <div>
                                                 <p className="text-sm font-bold text-text-dark leading-tight">{currentUser.name}</p>
-                                                <p className="text-2xs text-muted-gray">{currentUser.email}</p>
+                                                <p className="text-xs text-muted-gray">{currentUser.email}</p>
                                             </div>
                                         </div>
 

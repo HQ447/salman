@@ -26,10 +26,10 @@ function Vendors() {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-20 space-y-6 md:space-y-8 md:py-8">
 
             {/* Header */}
-            <div className="text-left -mt-6">
+            <div className="text-left ">
                 <h1 className="text-2xl sm:text-4xl font-extrabold text-text-dark tracking-tight">Verified Partners & Stores</h1>
                 <p className="text-xs sm:text-sm text-muted-gray mt-1">
                     Explore storefronts who have signed our Shariah trading ethics pledge.
@@ -56,8 +56,8 @@ function Vendors() {
                     <button
                         onClick={() => setFiqhFilter(fiqhFilter === 'all' ? 'certified' : 'all')}
                         className={`flex items-center gap-1.5 px-3.5 py-2 border rounded-lg text-xs font-semibold transition-all cursor-pointer ${fiqhFilter === 'certified'
-                                ? 'bg-primary text-white border-primary shadow-xs'
-                                : 'bg-white hover:bg-bg-custom text-text-dark border-border-custom'
+                            ? 'bg-primary text-white border-primary shadow-xs'
+                            : 'bg-white hover:bg-bg-custom text-text-dark border-border-custom'
                             }`}
                     >
                         <ShieldCheck className="w-4 h-4" />

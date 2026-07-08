@@ -29,7 +29,7 @@ function VendorDetails() {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20 space-y-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12 pb-20 space-y-6 md:space-y-10">
 
             {/* 1. Header Banner & Identity */}
             <div className="bg-white border border-border-custom rounded-xl shadow-xs overflow-hidden text-left">
@@ -82,8 +82,8 @@ function VendorDetails() {
                 <button
                     onClick={() => setActiveTab('products')}
                     className={`flex items-center gap-1.5 pb-3 px-4 font-bold text-xs uppercase tracking-wider transition border-b-2 cursor-pointer ${activeTab === 'products'
-                            ? 'border-primary text-primary'
-                            : 'border-transparent text-muted-gray hover:text-text-dark'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-muted-gray hover:text-text-dark'
                         }`}
                 >
                     <Grid className="w-4 h-4" />
@@ -92,8 +92,8 @@ function VendorDetails() {
                 <button
                     onClick={() => setActiveTab('about')}
                     className={`flex items-center gap-1.5 pb-3 px-4 font-bold text-xs uppercase tracking-wider transition border-b-2 cursor-pointer ${activeTab === 'about'
-                            ? 'border-primary text-primary'
-                            : 'border-transparent text-muted-gray hover:text-text-dark'
+                        ? 'border-primary text-primary'
+                        : 'border-transparent text-muted-gray hover:text-text-dark'
                         }`}
                 >
                     <Info className="w-4 h-4" />
@@ -106,7 +106,7 @@ function VendorDetails() {
                 {activeTab === 'products' ? (
                     <div>
                         {vendorProducts.length > 0 ? (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                                 {vendorProducts.map((p) => (
                                     <ProductCard key={p.id} product={p} />
                                 ))}

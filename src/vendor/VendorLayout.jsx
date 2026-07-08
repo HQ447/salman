@@ -21,6 +21,7 @@ function VendorLayout() {
     const getPageTitle = () => {
         const path = location.pathname
         if (path.includes('products-management')) return 'Products & Inventory'
+        if (path.includes('categories')) return 'Category Management'
         if (path.includes('orders-management')) return 'Order Management'
         if (path.includes('store-settings')) return 'Store Settings'
         return 'Analytics Dashboard'
@@ -29,6 +30,7 @@ function VendorLayout() {
     const getBreadcrumb = () => {
         const path = location.pathname
         if (path.includes('products-management')) return 'Vendor Console / Products'
+        if (path.includes('categories')) return 'Vendor Console / Categories'
         if (path.includes('orders-management')) return 'Vendor Console / Orders'
         if (path.includes('store-settings')) return 'Vendor Console / Settings'
         return 'Vendor Console / Overview'

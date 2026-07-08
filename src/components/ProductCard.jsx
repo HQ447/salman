@@ -35,14 +35,14 @@ function ProductCard({ product }) {
                 </Link>
 
                 {/* Transparency / Fiqh compliance tag */}
-                <div className="absolute top-3 left-3 z-10 flex flex-col space-y-1.5 pointer-events-none">
+                <div className="absolute md:top-3 top-2 left-1 md:left-3 z-10 flex flex-col space-y-1.5 pointer-events-none">
                     <Badge variant="primary" className="bg-primary/90 text-white backdrop-blur-xs font-medium border-none shadow-xs text-3xs">
                         Spot Trade Only
                     </Badge>
                 </div>
 
                 {/* Favorite overlay button - decorative */}
-                <button className="absolute top-3 right-3 p-1.5 hover:bg-white rounded-full bg-white/80 backdrop-blur-xs text-muted-gray hover:text-red-500 transition-all z-10 shadow-2xs">
+                <button className="absolute md:top-3 top-2 right-1 md:right-3 p-1.5 hover:bg-white rounded-full bg-white/80 backdrop-blur-xs text-muted-gray hover:text-red-500 transition-all z-10 shadow-2xs">
                     <Heart className="w-4.5 h-4.5" />
                 </button>
             </div>
@@ -50,11 +50,9 @@ function ProductCard({ product }) {
             {/* Content */}
             <div className="p-4 flex flex-col flex-1">
                 {/* Category & Vendor */}
-                <div className="flex justify-between items-center text-3xs tracking-wider uppercase font-semibold text-muted-gray mb-1.5">
+                <div className="flex flex-col  text-xs  uppercase font-semibold text-muted-gray mb-1.5">
                     <span>{product.categoryName}</span>
-                    <Link to={`/vendors/${product.vendorId}`} className="text-primary hover:underline hover:text-primary-dark">
-                        {product.vendorName}
-                    </Link>
+
                 </div>
 
                 {/* Product Title */}
@@ -62,6 +60,9 @@ function ProductCard({ product }) {
                     <h3 className="text-sm font-bold text-text-dark line-clamp-2 leading-relaxed">
                         {product.name}
                     </h3>
+                    <Link to={`/vendors/${product.vendorId}`} className="text-primary hover:underline text-xs hover:text-primary-dark">
+                        {product.vendorName}
+                    </Link>
                 </Link>
 
                 {/* Rating */}
@@ -78,9 +79,9 @@ function ProductCard({ product }) {
                 </div>
 
                 {/* Pricing & Cart Action */}
-                <div className="flex items-center justify-between mt-auto pt-3 border-t border-border-custom/50">
-                    <div>
-                        <span className="text-2xs text-muted-gray block leading-none font-medium mb-1">Transparent Price</span>
+                <div className="flex flex-col gap-3 md:gap-0 md:flex-row md:items-center md:justify-between mt-auto border-t border-border-custom/50">
+                    <div className='flex md:flex-col justify-between items-center'>
+                        <span className="text-2xs text-muted-gray block leading-none font-medium mb-1">Price</span>
                         <span className="text-base font-extrabold text-primary-dark">
                             ${product.price ? product.price.toFixed(2) : '0.00'}
                         </span>

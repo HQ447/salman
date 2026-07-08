@@ -15,13 +15,16 @@ import VendorRegistration from './auth/VendorRegistration'
 import AdminLayout from './admin/AdminLayout'
 import AdminAnalytics from './admin/AdminAnalytics'
 import AdminVendors from './admin/AdminVendors'
+import AdminVendorDetails from './admin/AdminVendorDetails'
 import AdminProducts from './admin/AdminProducts'
 import AdminOrders from './admin/AdminOrders'
-import AdminCategories from './admin/AdminCategories'
+import AdminAdministration from './admin/AdminAdministration'
+import AdminSettings from './admin/AdminSettings'
 import VendorLayout from './vendor/VendorLayout'
 import VendorAnalytics from './vendor/VendorAnalytics'
 import ProductsManagement from './vendor/ProductsManagement'
 import OrdersManagement from './vendor/OrdersManagement'
+import VendorCategories from './vendor/VendorCategories'
 import StoreSettings from './vendor/StoreSettings'
 import VendorDetails from './main/VendorDetails'
 import ProductDetails from './main/ProductDetails'
@@ -55,9 +58,11 @@ function App() {
         <Route path="/admin" element={<AdminLayout />} >
           <Route index element={<AdminAnalytics />} />
           <Route path="vendors" element={<AdminVendors />} />
+          <Route path="vendors/:vendorId" element={<AdminVendorDetails />} />
           <Route path="products" element={<AdminProducts />} />
           <Route path="orders" element={<AdminOrders />} />
-          <Route path="categories" element={<AdminCategories />} />
+          <Route path="administration" element={<AdminAdministration />} />
+          <Route path="settings" element={<AdminSettings />} />
         </Route>
 
         {/* Vendor Routes */}
@@ -65,6 +70,7 @@ function App() {
           <Route index element={<VendorAnalytics />} />
           <Route path="products-management" element={<ProductsManagement />} />
           <Route path="orders-management" element={<OrdersManagement />} />
+          <Route path="categories" element={<VendorCategories />} />
           <Route path="store-settings" element={<StoreSettings />} />
         </Route>
       </Routes>

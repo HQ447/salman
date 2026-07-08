@@ -143,6 +143,9 @@ function Footer() {
                         <Link to="/contact" className="hover:text-white transition">Vendor Code of Conduct</Link>
                     </div>
                 </div>
+                <div className="mt-4  flex justify-center items-center text-xs text-white/60 ">
+                    <h1>                    Delevlop By Hammad Ahmad. Contact <a href="https://hamadahmad.online/" target='_blank' className='underline'>www.hamadahmad.online</a> for web services.</h1>
+                </div>
 
             </div>
         </footer>

@@ -76,10 +76,10 @@ function Categories() {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 pb-20 space-y-6 md:space-y-8 md:py-8">
 
             {/* Page Title */}
-            <div className="text-left -mt-6">
+            <div className="text-left ">
                 <h1 className="text-2xl sm:text-4xl font-extrabold text-text-dark tracking-tight">Browse Halal Marketplace</h1>
                 <p className="text-xs sm:text-sm text-muted-gray mt-1">
                     Handpicked and audited products adhering to ethical trade guidelines.
@@ -92,7 +92,7 @@ function Categories() {
                 {/* Left Side: Filter Sidebar Panel */}
                 <aside className="space-y-6 lg:col-span-1 bg-white border border-border-custom p-5 rounded-xl shadow-xs text-left h-fit">
                     <div className="flex items-center justify-between pb-3 border-b border-border-custom mb-2">
-                        <h2 className="font-extrabold text-sm text-text-dark flex items-center gap-1.5 uppercase tracking-wider">
+                        <h2 className="font-extrabold text-sm text-green-800 flex items-center gap-1.5 uppercase tracking-wider">
                             <SlidersHorizontal className="w-4 h-4 text-primary" />
                             Filter Catalog
                         </h2>
@@ -107,8 +107,7 @@ function Categories() {
                     </div>
 
                     {/* Text Search */}
-                    <div className="space-y-1.5">
-                        <label className="text-3xs font-extrabold uppercase tracking-wider text-text-dark">Text Search</label>
+                    <div className="mt-5">
                         <div className="relative">
                             <input
                                 type="text"
@@ -123,13 +122,13 @@ function Categories() {
 
                     {/* Categories select checklist */}
                     <div className="space-y-2">
-                        <label className="text-3xs font-extrabold uppercase tracking-wider text-text-dark block">Categories</label>
+                        <label className="text-3xs font-extrabold uppercase tracking-wider text-green-800 block">Categories</label>
                         <div className="flex flex-col space-y-1">
                             <button
                                 onClick={() => handleCategorySelect('all')}
                                 className={`text-left text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-colors text-ellipsis overflow-hidden ${selectedCategory === 'all'
-                                        ? 'bg-primary text-white'
-                                        : 'text-text-dark/80 hover:bg-bg-custom'
+                                    ? 'bg-primary text-white'
+                                    : 'text-text-dark/80 hover:bg-bg-custom'
                                     }`}
                             >
                                 All Departments
@@ -139,8 +138,8 @@ function Categories() {
                                     key={cat.id}
                                     onClick={() => handleCategorySelect(cat.slug)}
                                     className={`text-left text-xs font-semibold px-2.5 py-1.5 rounded-lg transition-colors text-ellipsis overflow-hidden ${selectedCategory === cat.slug
-                                            ? 'bg-primary text-white'
-                                            : 'text-text-dark/80 hover:bg-bg-custom'
+                                        ? 'bg-primary text-white'
+                                        : 'text-text-dark/80 hover:bg-bg-custom'
                                         }`}
                                 >
                                     {cat.name}
@@ -151,7 +150,7 @@ function Categories() {
 
                     {/* Pricing range */}
                     <div className="space-y-1.5">
-                        <label className="text-3xs font-extrabold uppercase tracking-wider text-text-dark">Price Range (USD)</label>
+                        <label className="text-3xs font-extrabold uppercase tracking-wider text-green-800">Price Range (USD)</label>
                         <div className="grid grid-cols-2 gap-2">
                             <input
                                 type="number"
@@ -172,7 +171,7 @@ function Categories() {
 
                     {/* Minimum Rating */}
                     <div className="space-y-1.5">
-                        <label className="text-3xs font-extrabold uppercase tracking-wider text-text-dark">Minimum Rating</label>
+                        <label className="text-3xs font-extrabold uppercase tracking-wider text-green-800">Minimum Rating</label>
                         <select
                             value={minRating}
                             onChange={(e) => setMinRating(e.target.value)}

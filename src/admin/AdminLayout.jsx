@@ -15,19 +15,23 @@ function AdminLayout() {
 
     const getPageTitle = () => {
         const path = location.pathname
+        if (path.includes('vendors/')) return 'Vendor Details'
         if (path.includes('vendors')) return 'Vendor Management'
         if (path.includes('products')) return 'Product Catalog'
         if (path.includes('orders')) return 'Order Oversight'
-        if (path.includes('categories')) return 'Category Management'
+        if (path.includes('administration')) return 'User Administration'
+        if (path.includes('settings')) return 'Platform Settings'
         return 'Platform Analytics'
     }
 
     const getBreadcrumb = () => {
         const path = location.pathname
+        if (path.includes('vendors/')) return 'Admin Console / Vendors / Details'
         if (path.includes('vendors')) return 'Admin Console / Vendors'
         if (path.includes('products')) return 'Admin Console / Products'
         if (path.includes('orders')) return 'Admin Console / Orders'
-        if (path.includes('categories')) return 'Admin Console / Categories'
+        if (path.includes('administration')) return 'Admin Console / Administration'
+        if (path.includes('settings')) return 'Admin Console / Settings'
         return 'Admin Console / Overview'
     }
 

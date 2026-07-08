@@ -40,7 +40,7 @@ function Home() {
     }
 
     return (
-        <div className="space-y-20 pb-20">
+        <div className="space-y-10 md:space-y-20 pb-20">
 
             {/* 1. HERO SECTION */}
             <section className="relative bg-primary-dark text-white py-16 sm:py-24 overflow-hidden">
@@ -70,7 +70,8 @@ function Home() {
                             </h1>
 
                             <p className="text-base sm:text-lg text-white/80 max-w-xl leading-relaxed">
-                                Welcome to Souq Diyanat (سوق دیانت), a premier multi-vendor marketplace governed strictly under Fiqh al-Muamalat. Buy and sell with absolute clarity, mutual consent, and complete peace of mind.
+                                A Digital Marketplace Built on Integrity, Transparency, and Blessings <br />
+                                <span className='font-regular text-lg md:text-2xl'>سود، غرر اور استحصالی ہتھکنڈوں سے پاک دنیا کا پہلا مکمل شرعی ای کامرس پلیٹ فارم، جہاں خرید و فروخت کا ہر مرحلہ فقہ المعاملات کے متبوع اصولوں کے عین مطابق ہے۔</span>
                             </p>
 
                             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
@@ -121,32 +122,6 @@ function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* 2. FEATURED CATEGORIES */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center max-w-2xl mx-auto mb-10">
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-text-dark">Explore Halal Sectors</h2>
-                    <span className="h-0.5 w-12 bg-gold inline-block mt-2 rounded"></span>
-                    <p className="text-sm text-muted-gray mt-2.5">
-                        Browse our hand-screened departments, structured for transparency and conforming with Shariah trade ethics.
-                    </p>
-                </div>
-
-                <motion.div
-                    variants={staggerContainer}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-100px" }}
-                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-                >
-                    {categories.map((category) => (
-                        <motion.div key={category.id} variants={fadeInUp}>
-                            <CategoryCard category={category} />
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </section>
-
             {/* 3. FEATURED PRODUCTS */}
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 border-b border-border-custom pb-4">
@@ -165,15 +140,41 @@ function Home() {
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 md:gap-6 gap-3">
                     {featuredProducts.map((product) => (
                         <ProductCard key={product.id} product={product} />
                     ))}
                 </div>
             </section>
 
+            {/* 2. FEATURED CATEGORIES */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="text-center max-w-2xl mx-auto mb-10">
+                    <h2 className="text-2xl sm:text-3xl font-extrabold text-text-dark">Explore Halal Sectors</h2>
+                    <span className="h-0.5 w-12 bg-gold inline-block mt-2 rounded"></span>
+                    <p className="text-sm text-muted-gray mt-2.5">
+                        Browse our hand-screened departments, structured for transparency and conforming with Shariah trade ethics.
+                    </p>
+                </div>
+
+                <motion.div
+                    variants={staggerContainer}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    className="grid grid-cols-2 lg:grid-cols-3  md:gap-6 gap-3"
+                >
+                    {categories.map((category) => (
+                        <motion.div key={category.id} variants={fadeInUp}>
+                            <CategoryCard category={category} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </section>
+
+
             {/* 4. TOP VENDORS */}
-            <section className="bg-bg-custom py-16 border-y border-border-custom">
+            <section className="bg-bg-custom py-6 border-y border-border-custom">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 pb-4 border-b border-border-custom/50">
                         <div className="text-left">
@@ -369,7 +370,7 @@ function Home() {
             </section>
 
             {/* 8. FAQ - Accordion */}
-            <section className="bg-bg-custom py-16 border-y border-border-custom">
+            <section className="bg-bg-custom py-6 md:py-16 border-y border-border-custom">
                 <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
                     <div className="text-center">
                         <h2 className="text-2xl sm:text-3xl font-extrabold text-text-dark flex items-center justify-center gap-2">

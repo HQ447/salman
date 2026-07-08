@@ -6,6 +6,7 @@ import {
     Package,
     ShoppingBag,
     Settings,
+    LayoutGrid,
     LogOut,
     Globe,
     Store,
@@ -31,6 +32,7 @@ function VendorSidebar({ isOpen, toggleSidebar }) {
     const navigationItems = [
         { name: 'Analytics', path: '/vendor', icon: BarChart3, desc: 'Store overview' },
         { name: 'Products', path: '/vendor/products-management', icon: Package, desc: 'Manage catalog' },
+        { name: 'Categories', path: '/vendor/categories', icon: LayoutGrid, desc: 'Organize catalog' },
         { name: 'Orders', path: '/vendor/orders-management', icon: ShoppingBag, desc: 'Fulfillment center' },
         { name: 'Store Settings', path: '/vendor/store-settings', icon: Settings, desc: 'Customize profile' },
     ]

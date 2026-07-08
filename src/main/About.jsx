@@ -1,164 +1,417 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { Landmark, ShieldCheck, HeartHandshake, Compass, Users, Scale, Clock } from 'lucide-react'
+import {
+    Landmark,
+    ShieldCheck,
+    HeartHandshake,
+    Scale,
+    Database,
+    Building2
+} from 'lucide-react'
 
 function About() {
+
     const coreValues = [
         {
-            icon: HeartHandshake,
-            title: "Mutual Consent (Tiradin)",
-            desc: "All transactions are structured to guarantee absolute consensus. No hidden clauses, forced sales, or ambiguous subscription lock-ins."
-        },
-        {
             icon: ShieldCheck,
-            title: "Stock Control Verification",
-            desc: "We screen and require vendors to possess physical stocks in their warehouses prior to listings, aligned with Shariah ownership rules."
-        },
-        {
-            icon: Compass,
-            title: "Description Precision",
-            desc: "Detailed specs (weight, purity, format, fabric composition) are mandated to eliminate Jahalah (ignorance of product parameters)."
+            title: "Shariah Supervisory Board",
+            urdu: "شرعی سپروائزری بورڈ",
+            desc: "Every marketplace policy, transaction flow, and future smart contract is designed under the supervision of qualified Islamic scholars to ensure compliance with Fiqh al-Muamalat."
         },
         {
             icon: Scale,
-            title: "Zero Riba",
-            desc: "Total prohibition of index interest rates, late repayment fees, compounding penalties, or financing schemes that feed on loans."
-        }
-    ]
-
-    const timelineSteps = [
-        {
-            year: "Ramadan 1445 AH (2024)",
-            title: "Drafting the Code of Conduct",
-            desc: "Scholars and business analysts drafted Souq Diyanat's foundational compliance charter outlining Fiqh al-Muamalat parameters."
+            title: "Fair Protection of Rights",
+            urdu: "حقوق کا عادلانہ تحفظ",
+            desc: "We protect the rights of both buyers and sellers equally through transparency, accountability, and fair commercial practices."
         },
         {
-            year: "Muharram 1446 AH (2025)",
-            title: "Initial Partner Screenings",
-            desc: "Vetted our first 10 specialized local merchants supplying premium organic foods, dates, and authentic publishing houses."
-        },
-        {
-            year: "Safar 1447 AH (2026)",
-            title: "Souq Diyanat Official Release",
-            desc: "Launched our customer-facing web platform simulating transparent pricing models and spot cash deliveries across Pakistan."
+            icon: HeartHandshake,
+            title: "Transparent Commerce",
+            urdu: "شفاف تجارت",
+            desc: "Products must be described honestly with complete specifications, eliminating deception, ambiguity, and misleading information."
         }
     ]
 
     return (
-        <div className="space-y-16 py-12 pb-20">
+        <div className="space-y-20 pb-20">
 
-            {/* 1. Header Hero */}
-            <section className="bg-primary/5 border-b border-border-custom -mt-12 py-16 text-center">
-                <div className="max-w-3xl mx-auto px-4">
-                    <div className="inline-block bg-primary/10 text-primary px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
-                        Our Story & Stewardship
+            {/* Hero Section */}
+            <section className="bg-primary/5 border-b border-border-custom py-20">
+                <div className="max-w-4xl mx-auto px-4 text-center">
+
+                    <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6">
+                        <Landmark className="w-4 h-4" />
+                        About Souq Diyanat
                     </div>
-                    <h1 className="text-3xl sm:text-5xl font-extrabold text-text-dark tracking-tight leading-tight">
-                        Reviving Ethical Islamic Commerce
+
+                    <h1 className="text-4xl sm:text-5xl font-extrabold text-text-dark leading-tight">
+                        Building the Future of
+                        <span className="text-primary block mt-2">
+                            Ethical Islamic Digital Commerce
+                        </span>
                     </h1>
-                    <p className="text-sm sm:text-base text-muted-gray mt-4 max-w-xl mx-auto leading-relaxed">
-                        Souq Diyanat stands at the intersection of modern technology and age-old Islamic commerce ethics, creating a premium marketplace for the global Muslim community.
+
+                    <p className="mt-6 text-base text-muted-gray leading-relaxed max-w-3xl mx-auto">
+                        Souq Diyanat is more than an online marketplace. It is a comprehensive
+                        Shariah-compliant digital commerce platform where every transaction
+                        follows the authentic principles of Islamic commercial jurisprudence
+                        (Fiqh al-Muamalat), ensuring transparency, fairness, and trust.
                     </p>
-                </div>
-            </section>
 
-            {/* 2. Mission & Vision */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-
-                    {/* Mission Card */}
-                    <div className="bg-white rounded-xl border border-border-custom p-8 shadow-xs hover:border-primary/30 transition-all flex flex-col justify-between">
-                        <div>
-                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-5">
-                                <Landmark className="w-5.5 h-5.5" />
-                            </div>
-                            <h2 className="text-xl font-bold text-text-dark mb-3">Our Mission</h2>
-                            <p className="text-xs sm:text-sm text-muted-gray leading-relaxed">
-                                To simplify access to genuine shariah-compliant goods by enforcing transparency guidelines at every step. We audit sellers, clarify listing content, and facilitate clean transactions to eliminate Gharar (uncertainty) and late fees.
-                            </p>
-                        </div>
-                        <div className="border-t border-border-custom/50 pt-4 mt-6 text-2xs font-urdu font-medium text-gold scale-y-110 tracking-wide">
-                            دیانتداری اور سچائی پر مبنی تجارت کا فروغ
-                        </div>
-                    </div>
-
-                    {/* Vision Card */}
-                    <div className="bg-white rounded-xl border border-border-custom p-8 shadow-xs hover:border-primary/30 transition-all flex flex-col justify-between">
-                        <div>
-                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-5">
-                                <Users className="w-5.5 h-5.5" />
-                            </div>
-                            <h2 className="text-xl font-bold text-text-dark mb-3">Our Vision</h2>
-                            <p className="text-xs sm:text-sm text-muted-gray leading-relaxed">
-                                To evolve the global Muslim e-commerce ecosystem beyond standard transactional pages, proving that modern tech works beautifully when built directly on shariah-compliant foundations.
-                            </p>
-                        </div>
-                        <div className="border-t border-border-custom/50 pt-4 mt-6 text-2xs font-urdu font-medium text-gold scale-y-110 tracking-wide">
-                            جدید ٹیکنالوجی اور اسلامی تجارتی قوانین کا حسین امتزاج
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-
-            {/* 3. Core Values Grid */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-                <div className="text-center max-w-xl mx-auto">
-                    <h2 className="text-2xl sm:text-3xl font-extrabold text-text-dark">Our Pillars of Governance</h2>
-                    <p className="text-xs sm:text-sm text-muted-gray mt-2 leading-relaxed">
-                        These parameters guide every merchant, dispute resolution decision, and system logic on our platform.
-                    </p>
-                </div>
-
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    {coreValues.map((val, idx) => {
-                        const Icon = val.icon
-                        return (
-                            <div
-                                key={idx}
-                                className="bg-white border border-border-custom hover:border-gold rounded-xl p-6 shadow-2xs hover:shadow-xs transition-all space-y-3"
-                            >
-                                <div className="w-9 h-9 rounded bg-primary/5 flex items-center justify-center text-primary">
-                                    <Icon className="w-5 h-5" />
-                                </div>
-                                <h3 className="text-sm font-bold text-text-dark">{val.title}</h3>
-                                <p className="text-xs text-muted-gray leading-relaxed">{val.desc}</p>
-                            </div>
-                        )
-                    })}
-                </div>
-            </section>
-
-            {/* 4. Timeline */}
-            <section className="bg-bg-custom py-16 border-y border-border-custom">
-                <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-                    <div className="text-center">
-                        <h2 className="text-2xl sm:text-3xl font-extrabold text-text-dark flex items-center justify-center gap-2">
-                            <Clock className="w-7.5 h-7.5 text-primary" />
-                            Chronology & Development
-                        </h2>
-                        <p className="text-xs text-muted-gray mt-1.5">
-                            Refined progression of the Souq Diyanat compliance framework.
+                    <div className="mt-8">
+                        <p className="font-urdu text-gold text-xl scale-y-110 leading-loose">
+                            سوقِ دیانت صرف ایک آن لائن مارکیٹ پلیس نہیں بلکہ ایک مکمل شرعی
+                            ڈیجیٹل تجارتی نظام ہے جہاں خرید و فروخت کا ہر مرحلہ فقہ المعاملات
+                            کے اصولوں کے مطابق انجام دیا جاتا ہے۔
                         </p>
                     </div>
 
-                    <div className="relative border-l border-border-custom pl-6 space-y-10 ml-4">
-                        {timelineSteps.map((step, idx) => (
-                            <div key={idx} className="relative">
-                                {/* Timeline dot */}
-                                <div className="absolute -left-[31px] top-1.5 w-4 h-4 rounded-full bg-gold border p-0.5 border-white flex items-center justify-center">
-                                    <div className="w-2.5 h-2.5 rounded-full bg-primary" />
+                </div>
+            </section>
+
+            {/* Vision & Mission */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                    {/* Vision */}
+                    <div className="bg-white rounded-2xl border border-border-custom p-8 shadow-sm hover:border-primary/30 transition-all">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+                            <Landmark className="w-6 h-6" />
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-text-dark mb-4">
+                            Our Vision
+                        </h2>
+
+                        <p className="text-muted-gray leading-relaxed">
+                            To establish a fair, independent, and globally trusted digital
+                            economy that provides the Muslim Ummah with a halal alternative
+                            to conventional e-commerce platforms while ensuring justice,
+                            transparency, and Shariah compliance in every transaction.
+                        </p>
+
+                        <div className="mt-6 pt-5 border-t border-border-custom">
+                            <p className="font-urdu text-gold text-lg scale-y-110 leading-loose">
+                                مسلم اُمہ کے لیے ایک منصفانہ، خودمختار اور عالمی سطح پر
+                                قابلِ اعتماد ڈیجیٹل تجارتی معیشت قائم کرنا جو روایتی
+                                ای کامرس پلیٹ فارمز کا مکمل حلال متبادل فراہم کرے۔
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* Mission */}
+                    <div className="bg-white rounded-2xl border border-border-custom p-8 shadow-sm hover:border-primary/30 transition-all">
+                        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5">
+                            <HeartHandshake className="w-6 h-6" />
+                        </div>
+
+                        <h2 className="text-2xl font-bold text-text-dark mb-4">
+                            Our Mission
+                        </h2>
+
+                        <p className="text-muted-gray leading-relaxed">
+                            To integrate modern technologies, software systems, and future
+                            blockchain smart contracts with the principles of Islamic finance
+                            and Fiqh al-Muamalat, creating a marketplace free from Riba,
+                            Gharar, gambling, and the sale of non-owned goods.
+                        </p>
+
+                        <div className="mt-6 pt-5 border-t border-border-custom">
+                            <p className="font-urdu text-gold text-lg scale-y-110 leading-loose">
+                                جدید ٹیکنالوجی، سوفٹ ویئر سسٹمز اور اسلامی مالیات کے اصولوں
+                                کو یکجا کر کے ایسا تجارتی نظام قائم کرنا جہاں سود، غرر،
+                                قمار اور غیر ملکیتی اشیاء کی خرید و فروخت کا کوئی وجود نہ ہو۔
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            {/* Core Principles */}
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                        Our Core Principles
+                    </span>
+
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-text-dark">
+                        The Foundation of Every Transaction
+                    </h2>
+
+                    <p className="mt-4 text-muted-gray leading-relaxed">
+                        Every feature of Souq Diyanat is designed around authentic Islamic
+                        commercial ethics, ensuring transparency, justice, and trust for
+                        every buyer and seller.
+                    </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+                    {coreValues.map((item, index) => {
+
+                        const Icon = item.icon
+
+                        return (
+
+                            <div
+                                key={index}
+                                className="bg-white rounded-2xl border border-border-custom p-8 shadow-sm hover:shadow-md hover:border-primary/30 transition-all duration-300"
+                            >
+
+                                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6">
+                                    <Icon className="w-7 h-7" />
                                 </div>
 
-                                <div className="space-y-1 bg-white p-5 rounded-xl border border-border-custom shadow-2xs">
-                                    <span className="text-xs font-bold text-primary block">{step.year}</span>
-                                    <h3 className="text-sm font-extrabold text-text-dark">{step.title}</h3>
-                                    <p className="text-xs text-muted-gray leading-relaxed mt-1">{step.desc}</p>
-                                </div>
+                                <h3 className="text-xl font-bold text-text-dark">
+                                    {item.title}
+                                </h3>
+
+                                <p className="text-gold font-urdu text-lg mt-2 scale-y-110">
+                                    {item.urdu}
+                                </p>
+
+                                <p className="text-muted-gray leading-relaxed mt-5">
+                                    {item.desc}
+                                </p>
+
                             </div>
-                        ))}
-                    </div>
+
+                        )
+
+                    })}
+
                 </div>
+
+            </section>
+
+            {/* Organizational Framework */}
+
+            <section className="bg-bg-custom border-y border-border-custom py-20">
+
+                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                    <div className="grid lg:grid-cols-2 gap-14 items-center">
+
+                        <div>
+
+                            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-5">
+                                <Building2 className="w-4 h-4" />
+                                Organizational Structure
+                            </div>
+
+                            <h2 className="text-3xl sm:text-4xl font-extrabold text-text-dark mb-6">
+                                Organizational & Legal Framework
+                            </h2>
+
+                            <p className="text-muted-gray leading-relaxed mb-6">
+                                Souq Diyanat follows a hybrid legal structure designed to
+                                operate within an Islamic regulatory framework. Our objective
+                                is to establish a secure digital marketplace that combines
+                                modern technology with authentic Islamic commercial law.
+                            </p>
+
+                            <p className="text-muted-gray leading-relaxed">
+                                Every operational policy is developed with fairness,
+                                accountability, transparency, and long-term sustainability
+                                while protecting the interests of both merchants and customers.
+                            </p>
+
+                        </div>
+
+                        <div className="bg-white rounded-2xl border border-border-custom p-8 shadow-sm">
+
+                            <h3 className="text-2xl font-bold text-text-dark mb-5">
+                                اردو خلاصہ
+                            </h3>
+
+                            <p className="font-urdu text-gold text-xl leading-loose scale-y-110">
+                                سوقِ دیانت ایک ہائبرڈ قانونی ڈھانچے پر مبنی شرعی
+                                ای کامرس پلیٹ فارم ہے جس کا مقصد جدید ٹیکنالوجی
+                                کو اسلامی تجارتی اصولوں کے ساتھ ہم آہنگ کرتے ہوئے
+                                ایک محفوظ، شفاف اور قابلِ اعتماد تجارتی ماحول فراہم کرنا ہے۔
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* Technology & Security */}
+
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div className="grid lg:grid-cols-2 gap-12 items-center">
+
+                    <div className="bg-primary rounded-3xl p-10 text-white">
+
+                        <Database className="w-14 h-14 text-gold mb-6" />
+
+                        <h2 className="text-3xl font-bold mb-5">
+                            Technology with Trust
+                        </h2>
+
+                        <p className="leading-relaxed text-white/90">
+                            Modern database systems, cybersecurity standards, and future
+                            blockchain integrations are intended to strengthen transparency,
+                            data integrity, and operational reliability across the platform.
+                        </p>
+
+                    </div>
+
+                    <div>
+
+                        <h2 className="text-3xl font-extrabold text-text-dark mb-6">
+                            Digital Security & Halal Trading Environment
+                        </h2>
+
+                        <p className="text-muted-gray leading-relaxed mb-5">
+                            We prioritize customer privacy, secure data management,
+                            cybersecurity, and transparent business processes to create
+                            a trusted marketplace for the global Muslim community.
+                        </p>
+
+                        <p className="text-muted-gray leading-relaxed mb-5">
+                            Every future enhancement—from product verification to digital
+                            ownership tracking—will be developed to strengthen confidence,
+                            authenticity, and Shariah compliance throughout the trading
+                            journey.
+                        </p>
+
+                        <div className="bg-primary/5 rounded-xl border border-primary/10 p-6 mt-8">
+
+                            <p className="font-urdu text-gold text-xl leading-loose scale-y-110">
+                                جدید ڈیٹا بیس مینجمنٹ، سائبر سیکیورٹی اور محفوظ
+                                ڈیجیٹل انفراسٹرکچر کے ذریعے صارفین کو ایک قابلِ اعتماد
+                                اور مکمل شرعی تجارتی ماحول فراہم کرنا ہمارا بنیادی مقصد ہے۔
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+            {/* Why Souq Diyanat */}
+
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                <div className="text-center max-w-3xl mx-auto mb-12">
+
+                    <span className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-4">
+                        Why Souq Diyanat?
+                    </span>
+
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-text-dark">
+                        More Than an E-Commerce Platform
+                    </h2>
+
+                    <p className="mt-4 text-muted-gray leading-relaxed">
+                        Souq Diyanat is a long-term initiative to establish an ethical digital
+                        marketplace where technology serves Islamic values. Every policy,
+                        feature, and future enhancement is designed to promote fairness,
+                        accountability, and trust while remaining faithful to the principles
+                        of Fiqh al-Muamalat.
+                    </p>
+
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                    <div className="bg-white rounded-2xl border border-border-custom p-6 text-center shadow-sm hover:shadow-md transition-all">
+                        <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                            <ShieldCheck className="w-7 h-7 text-primary" />
+                        </div>
+
+                        <h3 className="font-bold text-text-dark mb-3">
+                            Shariah Compliance
+                        </h3>
+
+                        <p className="text-sm text-muted-gray leading-relaxed">
+                            Every transaction is designed around authentic Islamic commercial principles.
+                        </p>
+                    </div>
+
+                    <div className="bg-white rounded-2xl border border-border-custom p-6 text-center shadow-sm hover:shadow-md transition-all">
+                        <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                            <Scale className="w-7 h-7 text-primary" />
+                        </div>
+
+                        <h3 className="font-bold text-text-dark mb-3">
+                            Fair & Transparent Trade
+                        </h3>
+
+                        <p className="text-sm text-muted-gray leading-relaxed">
+                            Honest pricing, verified ownership, and complete product transparency.
+                        </p>
+                    </div>
+
+                    <div className="bg-white rounded-2xl border border-border-custom p-6 text-center shadow-sm hover:shadow-md transition-all">
+                        <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                            <Database className="w-7 h-7 text-primary" />
+                        </div>
+
+                        <h3 className="font-bold text-text-dark mb-3">
+                            Secure Technology
+                        </h3>
+
+                        <p className="text-sm text-muted-gray leading-relaxed">
+                            Built with modern technologies that prioritize security, transparency, and future scalability.
+                        </p>
+                    </div>
+
+                    <div className="bg-white rounded-2xl border border-border-custom p-6 text-center shadow-sm hover:shadow-md transition-all">
+                        <div className="w-14 h-14 mx-auto rounded-xl bg-primary/10 flex items-center justify-center mb-5">
+                            <HeartHandshake className="w-7 h-7 text-primary" />
+                        </div>
+
+                        <h3 className="font-bold text-text-dark mb-3">
+                            Community Trust
+                        </h3>
+
+                        <p className="text-sm text-muted-gray leading-relaxed">
+                            Strengthening trust between buyers and sellers through ethical digital commerce.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+            {/* Closing Statement */}
+
+            <section className="bg-primary text-white py-20">
+
+                <div className="max-w-4xl mx-auto px-4 text-center">
+
+                    <h2 className="text-3xl sm:text-4xl font-extrabold leading-tight">
+                        Building a Marketplace Rooted in Faith, Integrity & Innovation
+                    </h2>
+
+                    <p className="mt-6 text-white/90 leading-relaxed text-lg">
+                        Souq Diyanat aspires to become a trusted digital marketplace where
+                        technology and Islamic ethics work together to create transparent,
+                        responsible, and sustainable commerce for individuals, businesses,
+                        and the global Muslim community.
+                    </p>
+
+                    <div className="mt-10 max-w-3xl mx-auto border-t border-white/20 pt-8">
+
+                        <p className="font-urdu text-gold text-2xl leading-loose scale-y-110">
+                            ہمارا مقصد صرف ایک آن لائن مارکیٹ قائم کرنا نہیں بلکہ ایسا
+                            ڈیجیٹل تجارتی نظام تشکیل دینا ہے جہاں دیانت، انصاف، شفافیت
+                            اور اسلامی اصول ہر لین دین کی بنیاد ہوں، تاکہ امتِ مسلمہ
+                            کو ایک محفوظ، قابلِ اعتماد اور مکمل شرعی متبادل فراہم کیا جا سکے۔
+                        </p>
+
+                    </div>
+
+                </div>
+
             </section>
 
         </div>

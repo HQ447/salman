@@ -47,10 +47,10 @@ function Cart() {
                                                 <Link to={`/products/${item.product.id}`} className="font-extrabold text-sm text-text-dark hover:text-primary transition-colors line-clamp-1">
                                                     {item.product.name}
                                                 </Link>
-                                                <p className="text-3xs text-muted-gray uppercase tracking-wider font-semibold">
+                                                <p className="text-xs md:text-3xs text-muted-gray uppercase tracking-wider font-semibold">
                                                     Category: {item.product.categoryName}
                                                 </p>
-                                                <p className="text-3xs text-primary font-bold">
+                                                <p className="text-xs md:text-3xs text-primary font-bold">
                                                     Merchant: {item.product.vendorName}
                                                 </p>
                                             </div>
@@ -109,7 +109,7 @@ function Cart() {
                         {/* Disclaimer on refund terms */}
                         <div className="bg-bg-custom border border-border-custom p-4 rounded-xl flex items-start space-x-2 text-left">
                             <ShieldCheck className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                            <p className="text-3xs text-muted-gray leading-normal">
+                            <p className="text-xs md:text-3xs text-muted-gray leading-normal">
                                 By pursuing checkout, you acknowledge that all orders are subject to Shariah commercial principles. You hold the option to cancel at any time prior to shipment or review options for defect returns (Khayar al-Ayb).
                             </p>
                         </div>

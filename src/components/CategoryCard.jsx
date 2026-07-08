@@ -30,7 +30,7 @@ function CategoryCard({ category }) {
 
                     {/* Heading */}
                     <div>
-                        <h3 className="text-sm font-extrabold text-text-dark group-hover:text-primary-dark transition-colors">
+                        <h3 className="text-sm font-extrabold line-clamp-2 text-text-dark group-hover:text-primary-dark transition-colors">
                             {category.name}
                         </h3>
                         <p className="text-xs text-muted-gray leading-normal mt-1.5 line-clamp-2">
@@ -40,13 +40,13 @@ function CategoryCard({ category }) {
                 </div>
 
                 {/* Count and Next link trigger */}
-                <div className="flex items-center justify-between mt-6 pt-3 border-t border-border-custom/40">
-                    <span className="text-2xs font-semibold text-primary bg-primary/5 px-2.5 py-1 rounded">
+                <div className=" flex flex-col md:flex-row gap-2 md:gap-0 items-center justify-between mt-6 pt-3 border-t border-border-custom/40">
+                    <span className="font-inter  text-xs font-semibold text-primary bg-primary/5 px-2.5 py-1 rounded">
                         {category.count} Listings
                     </span>
                     <div className="text-muted-gray group-hover:text-primary transition-colors flex items-center text-xs font-semibold">
                         <span className="opacity-0 group-hover:opacity-100 transition-opacity mr-1">Explore</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
+                        <ArrowRight className="hidden md:block w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
                     </div>
                 </div>
             </motion.div>

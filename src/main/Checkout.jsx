@@ -144,7 +144,7 @@ function Checkout() {
                                 <Banknote className="w-5 h-5 text-primary shrink-0 mr-3 mt-0.5" />
                                 <div className="flex-1">
                                     <p className="font-extrabold text-sm text-text-dark">Cash on Delivery (CoD)</p>
-                                    <p className="text-3xs text-muted-gray leading-normal mt-0.5">
+                                    <p className="text-xs md:text-3xs text-muted-gray leading-normal mt-0.5">
                                         Recommended. Transfer money upon physical checking of the parcel. Fulfills the parameters of hand-to-hand (Yadan bi Yad) verification prior to asset receipt.
                                     </p>
                                 </div>
@@ -166,7 +166,7 @@ function Checkout() {
                                 <CreditCard className="w-5 h-5 text-primary shrink-0 mr-3 mt-0.5" />
                                 <div className="flex-1">
                                     <p className="font-extrabold text-sm text-text-dark">Islamic Debit Card Transfer</p>
-                                    <p className="text-3xs text-muted-gray leading-normal mt-0.5">
+                                    <p className="text-xs md:text-3xs text-muted-gray leading-normal mt-0.5">
                                         Pre-payment routed directly from your Shariah account. Free of index fees, conversion margins, or interest components. Guaranteed safety escrow terms.
                                     </p>
                                 </div>
@@ -220,7 +220,7 @@ function Checkout() {
 
                     <div className="bg-primary/5 rounded-xl border border-primary/20 p-3.5 flex items-start space-x-2">
                         <ShieldCheck className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                        <p className="text-3xs text-muted-gray leading-normal">
+                        <p className="text-xs md:text-3xs text-muted-gray leading-normal">
                             <strong>Islamic Pricing Model:</strong> Cost is strictly final. We guarantee zero late payment fees, no penalty accumulation, and absolute transparency in product pricing.
                         </p>
                     </div>

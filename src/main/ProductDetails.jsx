@@ -48,7 +48,7 @@ function ProductDetails() {
     }
 
     return (
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20 space-y-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20 space-y-6 md:space-y-8">
 
             {/* Back button */}
             <button
@@ -60,7 +60,7 @@ function ProductDetails() {
             </button>
 
             {/* Main product card */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 bg-white border border-border-custom p-6 sm:p-8 rounded-xl shadow-xs text-left">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-12 bg-white border border-border-custom p-6 sm:p-8 rounded-xl shadow-xs text-left">
 
                 {/* Left Column Image */}
                 <div className="lg:col-span-5 space-y-4">
@@ -71,7 +71,7 @@ function ProductDetails() {
                             className="w-full h-full object-cover"
                         />
                     </div>
-                    <div className="bg-bg-custom text-3xs text-muted-gray p-3 rounded-lg border border-border-custom/50 leading-relaxed italic text-center">
+                    <div className="bg-bg-custom text-xs text-muted-gray p-3 rounded-lg border border-border-custom/50 leading-relaxed italic text-center">
                         * The image represents the exact design styling of the asset.
                     </div>
                 </div>
@@ -79,14 +79,14 @@ function ProductDetails() {
                 {/* Right Column details */}
                 <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
 
-                    <div className="space-y-4">
+                    <div className="space-y-3 md:space-y-4">
 
                         {/* Category / Spot badge */}
-                        <div className="flex justify-between items-center">
-                            <Badge variant="primary" className="text-3xs px-3 py-1 font-semibold uppercase tracking-wider">
+                        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-2 md:gap-0">
+                            <Badge variant="primary" className="text-xs px-3 py-1 font-semibold uppercase w-fit">
                                 {product.categoryName}
                             </Badge>
-                            <div className="flex items-center gap-1 text-2xs text-primary font-bold">
+                            <div className="flex items-center gap-1 text-xs md:text-3xs text-primary font-bold">
                                 <Store className="w-3.5 h-3.5" />
                                 <Link to={`/vendors/${product.vendorId}`} className="hover:underline">
                                     {product.vendorName}
@@ -128,7 +128,7 @@ function ProductDetails() {
                                 <Award className="w-4 h-4 text-gold flex-shrink-0" />
                                 <span>Fiqh Transaction Assurance</span>
                             </div>
-                            <p className="text-3xs text-muted-gray leading-normal">
+                            <p className="md:text-3xs text-xs text-muted-gray leading-normal">
                                 {product.islamicInsight} Physical warehousing ownership verified by Souq Diyanat. Sold on absolute spot transaction mode (spot price, immediate delivery order routing, no riba elements).
                             </p>
                         </div>
@@ -167,7 +167,7 @@ function ProductDetails() {
                             {/* Buy trigger button */}
                             <Button
                                 variant="primary"
-                                size="lg"
+                                size="md"
                                 onClick={() => {
                                     addToCart(product, quantity)
                                     navigate('/cart')

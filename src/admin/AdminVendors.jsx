@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { AppContext } from '../context/AppContext'
 import { Search, ShieldCheck, MapPin, Mail, Phone, Filter } from 'lucide-react'
 import { Badge, Rating } from '../components/UI'
@@ -124,9 +125,12 @@ function AdminVendors() {
                                 </div>
 
                                 <div className="flex gap-2 mt-4">
-                                    <button className="flex-1 py-2 rounded-lg text-xs font-semibold bg-primary text-white hover:bg-primary-dark transition">
+                                    <Link
+                                        to={`/admin/vendors/${vendor.id}`}
+                                        className="flex-1 py-2 rounded-lg text-xs font-semibold bg-primary text-white hover:bg-primary-dark transition text-center"
+                                    >
                                         View Details
-                                    </button>
+                                    </Link>
                                     <button className="flex-1 py-2 rounded-lg text-xs font-semibold border border-border-custom text-muted-gray hover:bg-bg-custom transition">
                                         Audit Log
                                     </button>

@@ -223,98 +223,94 @@ function ProductsManagement() {
                 </div>
             </div>
 
-            {/* Products Grid */}
+            {/* Products Table */}
             {filteredProducts.length > 0 ? (
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                    {filteredProducts.map(product => {
-                        const isLowStock = product.stock <= 10
-                        const isCritical = product.stock <= 5
+                <div className="bg-white rounded-2xl border border-border-custom shadow-sm overflow-hidden">
+                    <div className="overflow-x-auto">
+                        <table className="w-full min-w-[720px]">
+                            <thead>
+                                <tr className="bg-bg-custom border-b border-border-custom">
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Product</th>
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Category</th>
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Price</th>
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Stock</th>
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Rating</th>
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Status</th>
+                                    <th className="text-left text-[10px] font-bold uppercase tracking-wider text-muted-gray px-4 py-3">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {filteredProducts.map((product, idx) => {
+                                    const isLowStock = product.stock <= 10
+                                    const isCritical = product.stock <= 5
+                                    const stockStatus = isCritical
+                                        ? { label: 'Critical', variant: 'danger' }
+                                        : isLowStock
+                                            ? { label: 'Low Stock', variant: 'warning' }
+                                            : { label: 'In Stock', variant: 'success' }
 
-                        return (
-                            <div
-                                key={product.id}
-                                className="bg-white rounded-2xl border border-border-custom shadow-sm hover:shadow-md transition-shadow overflow-hidden flex flex-col group"
-                            >
-                                {/* Product Image */}
-                                <div className="h-44 overflow-hidden relative bg-bg-custom">
-                                    <img
-                                        src={product.image}
-                                        alt={product.name}
-                                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    />
-                                    <div className="absolute top-3 left-3">
-                                        <Badge variant={
-                                            product.category === 'books-literature' ? 'primary' :
-                                                product.category === 'modest-fashion' ? 'secondary' :
-                                                    product.category === 'organic-foods' ? 'success' : 'gray'
-                                        }>
-                                            {product.categoryName || product.category}
-                                        </Badge>
-                                    </div>
-                                    {isCritical && (
-                                        <div className="absolute top-3 right-3 bg-danger-custom text-white text-[9px] font-bold px-2 py-0.5 rounded-full">
-                                            Critical Stock
-                                        </div>
-                                    )}
-                                </div>
-
-                                {/* Content */}
-                                <div className="p-4 flex-1 flex flex-col gap-3">
-                                    <div>
-                                        <h3 className="font-semibold text-sm text-text-dark line-clamp-1 group-hover:text-primary transition-colors">
-                                            {product.name}
-                                        </h3>
-                                        <p className="text-[11px] text-muted-gray line-clamp-2 leading-relaxed mt-1">
-                                            {product.description}
-                                        </p>
-                                    </div>
-
-                                    {/* Stock Bar */}
-                                    <div className="bg-bg-custom rounded-lg px-3 py-2 border border-border-light">
-                                        <div className="flex justify-between items-center mb-1.5">
-                                            <span className="text-[10px] font-medium text-muted-gray">Stock Level</span>
-                                            <div className="flex items-center gap-1">
-                                                {isLowStock && <AlertTriangle className={`w-3 h-3 ${isCritical ? 'text-danger-custom' : 'text-warning-custom'}`} />}
-                                                <span className={`text-[11px] font-bold ${isCritical ? 'text-danger-custom' : isLowStock ? 'text-warning-custom' : 'text-primary'}`}>
-                                                    {product.stock} units
-                                                </span>
-                                            </div>
-                                        </div>
-                                        <div className="h-1.5 bg-border-custom rounded-full overflow-hidden">
-                                            <div
-                                                className={`h-full rounded-full transition-all ${isCritical ? 'bg-danger-custom' : isLowStock ? 'bg-warning-custom' : 'bg-primary'}`}
-                                                style={{ width: `${Math.min((product.stock / 50) * 100, 100)}%` }}
-                                            />
-                                        </div>
-                                    </div>
-
-                                    {/* Price + Actions */}
-                                    <div className="flex items-center justify-between pt-2 border-t border-border-light">
-                                        <div>
-                                            <p className="text-[9px] text-muted-gray font-medium uppercase tracking-wide">Price</p>
-                                            <span className="text-lg font-black text-text-dark">${product.price.toFixed(2)}</span>
-                                        </div>
-                                        <div className="flex gap-1.5">
-                                            <button
-                                                onClick={() => handleEditClick(product.name)}
-                                                className="p-2 border border-border-custom rounded-lg hover:border-primary/40 text-muted-gray hover:text-primary bg-white hover:bg-primary-light transition text-xs cursor-pointer"
-                                                title="Edit product"
-                                            >
-                                                <Edit className="w-3.5 h-3.5" />
-                                            </button>
-                                            <button
-                                                onClick={() => handleDeleteProduct(product.id, product.name)}
-                                                className="p-2 border border-border-custom rounded-lg hover:border-red-200 text-muted-gray hover:text-danger-custom bg-white hover:bg-red-50 transition cursor-pointer"
-                                                title="Remove product"
-                                            >
-                                                <Trash2 className="w-3.5 h-3.5" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        )
-                    })}
+                                    return (
+                                        <tr
+                                            key={product.id}
+                                            className={`border-b border-border-light hover:bg-bg-custom/50 transition ${idx % 2 === 0 ? '' : 'bg-bg-custom/30'}`}
+                                        >
+                                            <td className="px-4 py-3">
+                                                <div className="flex items-center gap-3">
+                                                    <img
+                                                        src={product.image}
+                                                        alt={product.name}
+                                                        className="w-10 h-10 rounded-lg object-cover border border-border-custom shrink-0"
+                                                    />
+                                                    <div className="min-w-0">
+                                                        <p className="text-xs font-semibold text-text-dark truncate max-w-[180px]">{product.name}</p>
+                                                        <p className="text-[10px] text-muted-gray truncate max-w-[180px]">{product.description}</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <span className="text-xs text-muted-gray">{product.categoryName || product.category}</span>
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <span className="text-xs font-bold text-text-dark">${product.price.toFixed(2)}</span>
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <div className="flex items-center gap-1.5">
+                                                    {isLowStock && <AlertTriangle className={`w-3 h-3 ${isCritical ? 'text-danger-custom' : 'text-warning-custom'}`} />}
+                                                    <span className={`text-xs font-semibold ${isCritical ? 'text-danger-custom' : isLowStock ? 'text-warning-custom' : 'text-text-dark'}`}>
+                                                        {product.stock}
+                                                    </span>
+                                                </div>
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <span className="text-xs text-muted-gray">{product.rating} ({product.reviewsCount})</span>
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <Badge variant={stockStatus.variant}>{stockStatus.label}</Badge>
+                                            </td>
+                                            <td className="px-4 py-3">
+                                                <div className="flex gap-1.5">
+                                                    <button
+                                                        onClick={() => handleEditClick(product.name)}
+                                                        className="p-1.5 border border-border-custom rounded-lg hover:border-primary/40 text-muted-gray hover:text-primary hover:bg-primary-light transition"
+                                                        title="Edit product"
+                                                    >
+                                                        <Edit className="w-3.5 h-3.5" />
+                                                    </button>
+                                                    <button
+                                                        onClick={() => handleDeleteProduct(product.id, product.name)}
+                                                        className="p-1.5 border border-border-custom rounded-lg hover:border-red-200 text-muted-gray hover:text-danger-custom hover:bg-red-50 transition"
+                                                        title="Remove product"
+                                                    >
+                                                        <Trash2 className="w-3.5 h-3.5" />
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    )
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             ) : (
                 <div className="bg-white rounded-2xl border border-border-custom shadow-sm p-16 text-center">
