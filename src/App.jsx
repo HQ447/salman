@@ -14,6 +14,10 @@ import UserRegistration from './auth/UserRegistration'
 import VendorRegistration from './auth/VendorRegistration'
 import AdminLayout from './admin/AdminLayout'
 import AdminAnalytics from './admin/AdminAnalytics'
+import AdminVendors from './admin/AdminVendors'
+import AdminProducts from './admin/AdminProducts'
+import AdminOrders from './admin/AdminOrders'
+import AdminCategories from './admin/AdminCategories'
 import VendorLayout from './vendor/VendorLayout'
 import VendorAnalytics from './vendor/VendorAnalytics'
 import ProductsManagement from './vendor/ProductsManagement'
@@ -50,7 +54,10 @@ function App() {
         {/* Admin Routes */}
         <Route path="/admin" element={<AdminLayout />} >
           <Route index element={<AdminAnalytics />} />
-
+          <Route path="vendors" element={<AdminVendors />} />
+          <Route path="products" element={<AdminProducts />} />
+          <Route path="orders" element={<AdminOrders />} />
+          <Route path="categories" element={<AdminCategories />} />
         </Route>
 
         {/* Vendor Routes */}
