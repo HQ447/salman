@@ -29,10 +29,12 @@ import StoreSettings from './vendor/StoreSettings'
 import VendorDetails from './main/VendorDetails'
 import ProductDetails from './main/ProductDetails'
 import Checkout from './main/Checkout'
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <div>
+      <ScrollToTop />
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<MainLayout />} >
