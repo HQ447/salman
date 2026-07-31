@@ -33,7 +33,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import HostingExpiredScreen from "./components/HostingExpiredScreen";
 
 function App() {
-  const notAccess = true;
+  const notAccess = false;
 
   if (notAccess) return <HostingExpiredScreen />;
   return (

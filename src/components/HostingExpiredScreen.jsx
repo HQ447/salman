@@ -1,6 +1,6 @@
 import { AlertTriangle, Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import developerImage from "../assets/developer.jpg";
-
+ 
 const HostingExpiredScreen = () => {
   return (
     <div className="fixed inset-0 z-[999999] flex items-center justify-center bg-slate-100 p-6">
