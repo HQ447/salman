@@ -1,9 +1,9 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import MainLayout from "./main/MainLayout";
 import Home from "./main/Home";
 import About from "./main/About";
 import Contact from "./main/Contact";
+import Policies from "./main/Policies";
 import Categories from "./main/Categories";
 import Vendors from "./main/Vendors";
 import Cart from "./main/Cart";
@@ -45,6 +45,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="policies" element={<Policies />} />
           <Route path="categories" element={<Categories />} />
           <Route path="vendors" element={<Vendors />} />
           <Route path="cart" element={<Cart />} />

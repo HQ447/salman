@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ShoppingCart, User, Menu, X, Search, Landmark, ChevronDown, LogOut, CheckCircle2 } from 'lucide-react'
@@ -71,7 +71,7 @@ function Navbar() {
                     </Link>
 
                     {/* Search Bar - Hidden on mobile */}
-                    <form onSubmit={handleSearchSubmit} className="hidden md:flex flex-1 max-w-md mx-8 relative">
+                    <form onSubmit={handleSearchSubmit} className="hidden xl:flex flex-1 max-w-sm mx-6 relative">
                         <input
                             type="text"
                             placeholder="Search halal products, sellers..."
@@ -83,7 +83,7 @@ function Navbar() {
                     </form>
 
                     {/* Desktop Navigation Links */}
-                    <nav className="hidden lg:flex items-center space-x-8">
+                    <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
                         <NavLink
                             to="/"
                             className={({ isActive }) =>
@@ -108,13 +108,21 @@ function Navbar() {
                         >
                             Vendors
                         </NavLink>
-                        <NavLink
+                        {/* <NavLink
                             to="/about"
                             className={({ isActive }) =>
                                 `text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-primary' : 'text-text-dark/80 hover:text-primary'}`
                             }
                         >
                             About Us
+                        </NavLink> */}
+                        <NavLink
+                            to="/policies"
+                            className={({ isActive }) =>
+                                `text-sm font-semibold tracking-wide transition-colors ${isActive ? 'text-primary' : 'text-text-dark/80 hover:text-primary'}`
+                            }
+                        >
+                            Policies
                         </NavLink>
                         <NavLink
                             to="/contact"
@@ -259,6 +267,7 @@ function Navbar() {
                         {/* Mobile Hamburger Menu Toggle */}
                         <button
                             onClick={() => setIsOpen(!isOpen)}
+                            aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
                             className="lg:hidden p-2 text-text-dark hover:text-primary focus:outline-none hover:bg-bg-custom rounded-lg transition"
                         >
                             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -297,6 +306,7 @@ function Navbar() {
                                     </div>
                                     <button
                                         onClick={() => setIsOpen(false)}
+                                        aria-label="Close navigation menu"
                                         className="p-1 rounded-lg hover:bg-bg-custom text-muted-gray hover:text-text-dark"
                                     >
                                         <X className="w-5 h-5" />
@@ -340,6 +350,12 @@ function Navbar() {
                                         className="text-left py-2 font-semibold text-text-dark/90 hover:text-primary transition"
                                     >
                                         About Us
+                                    </button>
+                                    <button
+                                        onClick={() => handleMobileNavClick('/policies')}
+                                        className="text-left py-2 font-semibold text-text-dark/90 hover:text-primary transition"
+                                    >
+                                        Policies
                                     </button>
                                     <button
                                         onClick={() => handleMobileNavClick('/contact')}

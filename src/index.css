@@ -65,6 +65,52 @@
   opacity: 0.05;
 }
 
+/* Urdu typography used by the policy booklet and other RTL surfaces. */
+.urdu-regular {
+  font-family: "JameelNoori", serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+.urdu-kasheeda {
+  font-family: "JameelNooriKasheeda", "JameelNoori", serif;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
+}
+
+.policy-book-page {
+  background:
+    linear-gradient(90deg, rgba(8, 76, 58, 0.035), transparent 8%, transparent 92%, rgba(212, 175, 55, 0.035)),
+    repeating-linear-gradient(0deg, rgba(55, 65, 81, 0.012) 0, rgba(55, 65, 81, 0.012) 1px, transparent 1px, transparent 5px),
+    #fffdf7;
+}
+
+.policy-book-page::before {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  right: 1.15rem;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.35) 12%, rgba(212, 175, 55, 0.35) 88%, transparent);
+}
+
+.policy-book-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4.5rem;
+  height: 4.5rem;
+  background: linear-gradient(135deg, transparent 48%, rgba(212, 175, 55, 0.08) 49%, rgba(8, 76, 58, 0.08));
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .policy-book-page::before {
+    right: 2rem;
+  }
+}
+
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
